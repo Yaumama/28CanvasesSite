@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>28 Canvases</title>
+        <script src="index.js" defer></script>
+        <link rel="icon" href="../icon.png">
+        <link rel="stylesheet" href="style.css">
+        <script type="importmap">
+            {
+                "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.173.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.173.0/examples/jsm/"
+                }
+            }
+        </script>
+    </head>
+    <body style="opacity: 0">
+        <div class="topBar">
+            <div style="font-size: 3.4vh; position: absolute; left: 2vw; line-height: 0.9; color: #ffdf90; text-align: right;">
+                <span style="color: #e4e4e4; font-size: 2vh;">THE </span>28<br> CANVASES<br>
+                <span style="color: #e4e4e4; font-size: 2vh;">WEBSITE</span>
+            </div>
+            <button id="home">home</button>
+            <button id="canvases">canvases</button>
+            <button id="upload">upload</button>
+        </div>
+        <div class="tip" style="opacity: 1">Scroll to go through the pages of the handbook.</div>
+        <script type="module" defer src="renderer.js"></script>
+    </body>
+</html>

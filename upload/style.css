@@ -1,0 +1,79 @@
+body, html {
+    background: rgb(15,15,15);
+    background: linear-gradient(135deg, rgba(15,15,15,1) 0%, rgba(8,8,8,1) 100%);
+    color: #e4e4e4;
+    font-family: helvetica;
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 250ms;
+}
+
+.topBar {
+    width: 100vw;
+    height: 11vh;
+    background-color: #070707;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    transition: opacity 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    z-index: 5000;
+}
+
+.topBar button {
+    width: 15vw;
+    height: 8vh;
+    margin-right: 3vw;
+    border: #000000 solid 3px;
+    background-color: #030303;
+    color: #e4e4e4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 250ms;
+    transform-origin: center;
+    font-size: 2.5vmax;
+}
+
+.door {
+    position: absolute;
+    background-color: #2f2f2f;
+    width: 18vmax;
+    height: 24.6069364162vmax;
+    border-radius: 5px;
+    left: calc(50vw - 9vmax);
+    top: calc(50vh - 12.3034682081vmax);
+}
+
+.cards {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 18vmax;
+    height: 24.6069364162vmax;
+    background-color: #2f2f2f;
+    border-radius: 5px;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vmax;
+    cursor: pointer;
+    transition: opacity 500ms;
+}
+
+.Scene3d {
+    position: absolute;
+    border-radius: 5px;
+    z-index: 5002;
+    transform: rotateX(180deg);
+}

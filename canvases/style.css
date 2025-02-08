@@ -1,0 +1,145 @@
+body, html {
+    background: rgb(15,15,15);
+    background: linear-gradient(135deg, rgba(15,15,15,1) 0%, rgba(8,8,8,1) 100%);
+    color: #e4e4e4;
+    font-family: helvetica;
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 250ms;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 75vw;
+    margin-left: 12.5vw;
+    margin-top: 20vh;
+    height: 75vh;
+}
+
+.cardWrapper {
+    width: 11vmax;
+    height: 11vmax;
+    text-align: center;
+    margin-right: 2.5vmax;
+    margin-left: 2.5vmax;
+    transition: opacity 500ms, transform 500ms;
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+    border-radius: 3px;
+    transition: transform 500ms cubic-bezier(.63,.25,.09,1.2);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.page {
+    position: absolute;
+    transition: top 500ms;
+}
+
+img {
+    border-radius: 5px;
+    transition: transform 500ms;
+    transform-origin: top center;
+}
+
+p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 500ms;
+    width: 100%;
+    transform-origin: top center;
+    transform: translate(0, 40vh);
+    margin: 0;
+    font-size: 0.7vmax;
+    overflow-x: hidden;
+}
+
+.card button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 500ms;
+    transform-origin: top center;
+    transform: translate(117%, 49.7vh);
+    width: 30%;
+    font-size: 0.5vmax;
+    outline: none;
+    border: none;
+    background-color: #1b1b1b;
+    color: #e4e4e4;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.topBar {
+    width: 100vw;
+    height: 11vh;
+    background-color: #070707;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    transition: opacity 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.cardContents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topBar button {
+    width: 15vw;
+    height: 8vh;
+    margin-right: 3vw;
+    border: #000000 solid 3px;
+    background-color: #030303;
+    color: #e4e4e4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 250ms;
+    transform-origin: center;
+    font-size: 2.5vmax;
+}
+
+.description {
+    display: block;
+    font-size: 0.3vmax;
+    line-height: 1.6em;
+}
+
+::-webkit-scrollbar {
+    width: 0vw;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1b1b1b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.tip {
+    position: absolute;
+    transition: opacity 500ms;
+    bottom: 2vh;
+    text-align: center;
+    width: 100vw;
+    font-size: 1.5vmax;
+}
