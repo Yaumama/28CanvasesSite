@@ -25,7 +25,7 @@ for (let i = 0; i < allBarButtons.length; i++) {
     }
 }
 
-window.onwheel = function(e) {
+function scrollThroughCards(deltaY) {
     let tip = document.querySelector(".tip")
     if (tip && tip.style.opacity != "0") {
         tip.style.opacity = "0"
@@ -33,20 +33,32 @@ window.onwheel = function(e) {
             tip.remove()
         }, 500)
     }
-    if (e.deltaY < 0) {
+    if (deltaY < 0) {
         if (allCards[0].zoomFactor + 1000 > (allCards.length - 1) * 1000) {return}
         for (let i = 0; i < allCards.length; i++) {
             let v = allCards[i]
             v.zoomFactor += 1000
             v.style.transform = `perspective(500px) translate3d(${v.xValue}vw, 0, ${v.zoomFactor}px)`
         }
-    } else if (e.deltaY > 0) {
+    } else if (deltaY > 0) {
         if (allCards[0].zoomFactor - 1000 < 0) {return}
         for (let i = 0; i < allCards.length; i++) {
             let v = allCards[i]
             v.zoomFactor -= 1000
             v.style.transform = `perspective(500px) translate3d(${v.xValue}vw, 0, ${v.zoomFactor}px)`
         }
+    }
+}
+
+window.onwheel = function(e) {
+    scrollThroughCards(e.deltaY)
+}
+
+window.onkeydown = function(e) {
+    if (e.key == "ArrowDown") {
+        scrollThroughCards(1)
+    } else if (e.key == "ArrowUp") {
+        scrollThroughCards(-1)
     }
 }
 

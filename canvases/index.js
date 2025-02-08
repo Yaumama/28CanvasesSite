@@ -192,7 +192,7 @@ for (let i = 0; i < allWrappers.length; i++) {
     }
 }
 
-window.onwheel = function(e) {
+function scrollThroughPages(deltaY) {
     if (!hoverableAndScrollable) {return}
     let tip = document.querySelector(".tip")
     if (tip && tip.style.opacity != "0") {
@@ -203,7 +203,7 @@ window.onwheel = function(e) {
     }
     let allPages = document.querySelectorAll(".page")
 
-    if (e.deltaY > 0) {
+    if (deltaY > 0) {
         let firstChild = allPages[0]
         if (Number(firstChild.style.top.replace("vh", "").replace("px", "")) - 100 >= -(allPages.length - 1) * 100) {
             for (let i = 0; i < allPages.length; i++) {
@@ -211,7 +211,7 @@ window.onwheel = function(e) {
                 v.style.top = Number(v.style.top.replace("vh", "").replace("px", "")) - 100 + "vh";
             }
         }
-    } else if (e.deltaY < 0) {
+    } else if (deltaY < 0) {
         let firstChild = allPages[0]
         if (Number(firstChild.style.top.replace("vh", "").replace("px", "")) <= -100) {
             for (let i = 0; i < allPages.length; i++) {
@@ -219,6 +219,18 @@ window.onwheel = function(e) {
                 v.style.top = Number(v.style.top.replace("vh", "").replace("px", "")) + 100 + "vh";
             }
         }
+    }
+}
+
+window.onwheel = function(e) {
+    scrollThroughPages(e.deltaY)
+}
+
+window.onkeydown = function(e) {
+    if (e.key == "ArrowDown") {
+        scrollThroughPages(1)
+    } else if (e.key == "ArrowUp") {
+        scrollThroughPages(-1)
     }
 }
 
