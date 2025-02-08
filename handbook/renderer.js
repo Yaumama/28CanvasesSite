@@ -53,12 +53,12 @@ function scrollThroughPages(deltaY) {
             tip.remove()
         }, 500)
     }
-    if (deltaY > 0) {
+    if (deltaY < 0) {
         if (currentPosition + 1 > positions.length - 1) {return}
         animProgress = 0
         currentPosition += 1
         currentPosition = clamp(currentPosition, 0, positions.length - 1)
-    } else if (deltaY < 0) {
+    } else if (deltaY > 0) {
         if (currentPosition - 1 < 0) {return}
         animProgress = 0
         currentPosition -= 1
