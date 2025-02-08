@@ -50,15 +50,24 @@ function scrollThroughCards(deltaY) {
     }
 }
 
+let debounce = false
+
 window.onwheel = function(e) {
-    scrollThroughCards(e.deltaY)
+    if (debounce && (e.deltaY != 100 || e.deltaY != -100)) {return}
+    if (e.deltaY > 35 || e.deltaY < -35) {
+        debounce = true
+        scrollThroughCards(e.deltaY)
+        setTimeout(() => {
+            debounce = false
+        }, 250);
+    }
 }
 
 window.onkeydown = function(e) {
     if (e.key == "ArrowDown") {
-        scrollThroughCards(1)
+        scrollThroughCards(100)
     } else if (e.key == "ArrowUp") {
-        scrollThroughCards(-1)
+        scrollThroughCards(-100)
     }
 }
 

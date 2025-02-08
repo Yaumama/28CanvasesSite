@@ -222,15 +222,24 @@ function scrollThroughPages(deltaY) {
     }
 }
 
+let debounce = false
+
 window.onwheel = function(e) {
-    scrollThroughPages(e.deltaY)
+    if (debounce && (e.deltaY != 100 || e.deltaY != -100)) {return}
+    if (e.deltaY > 35 || e.deltaY < -35) {
+        debounce = true
+        scrollThroughPages(e.deltaY)
+        setTimeout(() => {
+            debounce = false
+        }, 250);
+    }
 }
 
 window.onkeydown = function(e) {
     if (e.key == "ArrowDown") {
-        scrollThroughPages(1)
+        scrollThroughPages(100)
     } else if (e.key == "ArrowUp") {
-        scrollThroughPages(-1)
+        scrollThroughPages(-100)
     }
 }
 
