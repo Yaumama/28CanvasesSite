@@ -20,7 +20,7 @@ for (let i = 0; i < allBarButtons.length; i++) {
         v.style.transform = "scale(1.1)"
         document.body.style.opacity = "0"
         setTimeout(function() {
-            location.href = location.origin + "/28canvasessite/" + v.id
+            location.href = location.origin + "/28CanvasesSite/" + v.id
         }, 250)
     }
 }
