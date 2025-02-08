@@ -69,13 +69,17 @@ function scrollThroughPages(deltaY) {
 let debounce = false
 
 window.onwheel = function(e) {
-    if (debounce && (e.deltaY != 100 || e.deltaY != -100)) {return}
-    if (e.deltaY > 35 || e.deltaY < -35) {
-        debounce = true
+    if (e.deltaY == 100 || e.deltaY == -100) {
         scrollThroughPages(e.deltaY)
-        setTimeout(() => {
-            debounce = false
-        }, 250);
+    } else {
+        if (debounce) {return}
+        if (e.deltaY > 35 || e.deltaY < -35) {
+            debounce = true
+            scrollThroughPages(e.deltaY)
+            setTimeout(() => {
+                debounce = false
+            }, 250);
+        }
     }
 }
 
