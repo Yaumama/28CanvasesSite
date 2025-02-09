@@ -42,10 +42,10 @@ body, html {
 
 .card {
     position: absolute;
-    top: 15vh;
-    left: 37.5vw;
-    width: 25vw;
-    height: 70vh;
+    top: calc(50vh - 17.2395833334vmax);
+    left: calc(50vw - 12.5vmax);
+    width: 25vmax;
+    height: 34.4791666667vmax;
     background-color: rgba(57, 57, 57, 0.6);
     border-radius: 10px;
     backdrop-filter: blur(5px);
