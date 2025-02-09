@@ -60,7 +60,7 @@ for (let i = 0; i < allContainers.length; i++) {
         }
 
         let description = document.createElement("p")
-        description.innerHTML = 'Description:<br><span class="description"><br><span></span></span>'
+        description.innerHTML = 'description:<br><span class="description"><br><span></span></span>'
 
         description.children[1].children[1].innerText = "De test is een meertraps aërobe capaciteitstest die steeds moeilijker wordt naarmate deze vordert. De 20 meter pacertest begint over 30 seconden. Stel je op bij de start. De loopsnelheid begint langzaam, maar wordt elke minuut hoger nadat u dit signaal hoort. Elke keer dat u dit geluid hoort, moet er één ronde worden afgelegd. Vergeet niet om in een rechte lijn te rennen en zo lang mogelijk te rennen. De tweede keer dat je er niet in slaagt een ronde vóór het geluid af te leggen, is je test voorbij. De test begint met het woord start. Op jouw punt, maak je klaar, begin."
 
